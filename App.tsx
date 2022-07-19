@@ -2,7 +2,7 @@ import * as React from 'react';
 import './style.css';
 import React, { useState } from 'react';
 
-export default function App() {
+function App() {
   let [Task, SetData] = useState(null);
   let [allTask, SetList] = useState([]);
   const UpdateData = (e) => {
@@ -25,10 +25,11 @@ export default function App() {
         Total Tasks TODO is :{allTask.length}
         <br />
         {/*allTask.length > 0 ? allTask : 'you have zero tasks '*/}
-       { allTask.map(T => <div key={T} 
-            >{T}</div>)}
-      
+        {allTask.map((T) => (
+          <h1 key={T}>{T}</h1>
+        ))}
       </div>
     </>
   );
 }
+export default App;

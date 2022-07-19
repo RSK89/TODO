@@ -14,7 +14,7 @@ export default function App() {
   return (
     <>
       <div>
-        <input type="text" onChange={UpdateData} />;
+        <input type="text" onChange={UpdateData} />
         <button onClick={add}>ADD</button>
       </div>
       <div>{List}</div>

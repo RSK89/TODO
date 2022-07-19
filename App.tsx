@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 
 export default function App() {
   let [Task, SetData] = useState(null);
-  let [List, SetList] = useState([]);
+  let [allTask, SetList] = useState([]);
   const UpdateData = (e) => {
     SetData(e.target.value);
   };
   const addTask = () => {
-    SetList([...List, Task]);
+    SetList([...allTask, Task]);
   };
   return (
     <>
@@ -18,9 +18,9 @@ export default function App() {
         <button onClick={addTask}>ADD</button>
       </div>
       <div>
-        Total Tasks TODO is :{List.length}
+        Total Tasks TODO is :{allTask.length}
         <br />
-        {List}
+        {allTask}
       </div>
       <div>{}</div>
       <div>{}</div>

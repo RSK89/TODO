@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function App() {
   let [data, SetData] = useState([]);
   const add = () => {
+    
     SetData([]);
   };
   return (

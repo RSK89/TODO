@@ -3,23 +3,21 @@ import './style.css';
 import React, { useState } from 'react';
 
 export default function App() {
-  let [data, SetData] = useState([]);
+  let [data, SetData] = useState(null);
+  let [List, SetList] = useState(['']);
+  const UpdateData = (e) => {
+    SetData(e.target.value);
+  };
   const add = () => {
-    
-    SetData([]);
+    SetList([...List, data]);
   };
   return (
     <>
       <div>
-        <input
-          type="text"
-          onChange={(e) => {
-            SetData(e.target.value);
-          }}
-        />
+        <input type="text" onChange={UpdateData} />;
         <button onClick={add}>ADD</button>
       </div>
-      <div>{data}</div>
+      <div>{List}</div>
     </>
   );
 }

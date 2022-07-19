@@ -9,7 +9,12 @@ export default function App() {
     SetData(e.target.value);
   };
   const addTask = () => {
-    SetList([...allTask, Task]);
+    if (allTask.length < 5) {
+      SetList([...allTask, Task]);
+    }
+    else{
+    alert('Only 5 Tasks Allowed');
+    }
   };
   return (
     <>
@@ -20,7 +25,7 @@ export default function App() {
       <div>
         Total Tasks TODO is :{allTask.length}
         <br />
-        {allTask}
+        {allTask.length > 0 ? allTask : 'you have zero tasks '}
       </div>
       <div>{}</div>
       <div>{}</div>

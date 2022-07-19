@@ -17,9 +17,9 @@ export default function App() {
         <input type="text" onChange={UpdateData} />
         <button onClick={add}>ADD</button>
       </div>
-      <div>{List[1]}</div>
-      <div>{List[2]}</div>
-      <div>{List[3]}</div>
+      <div>{List}</div>
+      <div>{}</div>
+      <div>{}</div>
     </>
   );
 }

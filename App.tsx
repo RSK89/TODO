@@ -15,6 +15,11 @@ function App() {
       alert('Only 5 Tasks Allowed');
     }
   };
+  const HandleDelete = () => {
+    this.setState({
+      allTask: this.state.allTask.filter((el) => el !== Task),
+    });
+  };
   return (
     <>
       <div>
@@ -26,7 +31,10 @@ function App() {
         <br />
         {/*allTask.length > 0 ? allTask : 'you have zero tasks '*/}
         {allTask.map((T) => (
-          <h1 key={T}>{T}</h1>
+          <h1 key={T}>
+            {T}
+            <a onClick={this.HandleDelete()} href="">[X]</a>
+          </h1>
         ))}
       </div>
     </>

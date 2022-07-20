@@ -9,11 +9,20 @@ function App() {
     SetData(e.target.value);
   };
   const addTask = () => {
+    const newTask = {
+      id: allTask.length === 0 ? 1 : allTask[allTask.length - 1].id + 1,
+      name: Task,
+    };
+
     if (allTask.length < 5) {
-      SetList([...allTask, Task]);
+      SetList([...allTask, newTask]);
     } else {
       alert('Only 5 Tasks Allowed');
     }
+  };
+
+  const handledelete = (id) => {
+    SetList(allTask.filter((ta) => ta.id !== id));
   };
   return (
     <>
@@ -26,11 +35,9 @@ function App() {
         <br />
         {/*allTask.length > 0 ? allTask : 'you have zero tasks '*/}
         {allTask.map((T) => (
-          <h1 key={T}>
-            {T}
-            <a onClick={} href="">
-              [X]
-            </a>
+          <h1>
+            {T.name}
+            <button onClick={() => handledelete(T.id)}>Delete</button>
           </h1>
         ))}
       </div>
